@@ -1,0 +1,10 @@
+%h1 Place %index
+
+-@places.each do |p|
+  %p
+    %strong
+      = p.title
+    %br
+    = p.description
+    %br
+    = p.location
