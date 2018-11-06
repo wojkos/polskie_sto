@@ -1,5 +1,9 @@
 %h1 Pages#home
 %p Find me in app/views/pages/home.html.erb
+-unless current_user
+  %h1 Welcome, please login to continue
+  = link_to('Sign in with Google', '/auth/google_oauth2')
 %p.alert.alert-success
   Bootstrap Added!
-  
+= current_user.first_name if current_user
+= image_tag(current_user.picture)
