@@ -1,10 +1,7 @@
-%h1 Place %index
-
--@places.each do |p|
-  %p
-    %strong
-      = p.title
-    %br
-    = p.description
-    %br
-    = p.location
+.container
+  .row
+    .col-sm-12
+      %h1 Place index
+      %span
+        = link_to('New Place', new_place_path, class: 'btn btn-success')
+    = render @places

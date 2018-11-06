@@ -10,7 +10,7 @@ class PlacesController < ApplicationController
   end
 
   def create
-    @place = Portfolio.new(place_params)
+    @place = Place.new(place_params)
 
     respond_to do |format|
       if @place.save
@@ -51,7 +51,7 @@ class PlacesController < ApplicationController
   private
 
   def set_place
-    @place = Place.friendly.find(params[:id])
+    @place = Place.find(params[:id])
   end
 
   def place_params
